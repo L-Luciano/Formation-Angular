@@ -1,0 +1,12 @@
+<div>
+    <fieldset>
+        <legend>Connexion</legend>
+        <form #myForm="ngForm" (submit)="submitForm()" novalidate>
+            <input name="login" placeholder="Login" type="text" [disabled]="loadingRequest" [(ngModel)]="userForm.pseudo"
+                   required/>
+            <input name="password" placeholder="Mot de passe" type="password" [disabled]="loadingRequest"
+                   [(ngModel)]="userForm.password" required/><br/><br/>
+            <button type="submit" [disabled]="!myForm.valid || loadingRequest">Valider</button>
+        </form>
+    </fieldset>
+</div>

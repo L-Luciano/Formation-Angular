@@ -1,0 +1,35 @@
+<div class="my-tickets">
+    <h2 class="title" *ngIf="!isEdit">Ajouter un ticket</h2>
+    <h2 class="title" *ngIf="isEdit">Edition du ticket #{{idTicket}}</h2>
+
+    <form class="form-ticket" #formTicket="ngForm">
+        <input type="text" name="url" [(ngModel)]="ticketActual.urlImage" placeholder="Url de l'image" required
+               [disabled]="requestLoading"/>
+        <br/>
+
+        <input type="text" name="title" [(ngModel)]="ticketActual.name" placeholder="Nom du ticket" required
+               [disabled]="requestLoading"/>
+        <br/>
+
+        <input type="number" name="date" [(ngModel)]="ticketActual.expiration" placeholder="Date d'expiration"
+               required [disabled]="requestLoading"/>
+        <br/>
+
+        <textarea [(ngModel)]="ticketActual.description" name="description" placeholder="Description"
+                  required [disabled]="requestLoading"></textarea>
+        <br/>
+
+        <input type="number" name="quantity" [(ngModel)]="ticketActual.nbLefts" placeholder="Quantité" required
+               [disabled]="requestLoading"/>
+        <br/>
+
+        <ng-container *ngIf="requestLoading">
+            <app-loading></app-loading>
+        </ng-container>
+
+        <ng-container *ngIf="!requestLoading">
+            <button type="submit" *ngIf="!isEdit" [disabled]="!formTicket.valid" (click)="create()">Créer</button>
+            <button type="submit" *ngIf="isEdit" [disabled]="!formTicket.valid" (click)="edit()">Editer</button>
+        </ng-container>
+    </form>
+</div>

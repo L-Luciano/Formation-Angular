@@ -1,0 +1,9 @@
+<form [formGroup]="loginForm" (submit)="onSubmit()" class="form">
+  <div class="ui input">
+    <input class="my-input" type="text" formControlName="login" />
+    <input class="my-input" type="password" formControlName="password" />
+  </div>
+
+  <button class="ui primary button" type="submit" *ngIf="!loading">Login</button>
+  <app-loading *ngIf="loading"></app-loading>
+</form>

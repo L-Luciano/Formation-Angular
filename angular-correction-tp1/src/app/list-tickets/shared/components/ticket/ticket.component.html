@@ -1,0 +1,18 @@
+<div class="ui grid ticket-wrapper">
+  <div class="four wide column">
+    <img class="overview" [src]="urlImage" />
+  </div>
+  <div class="column ten wide">
+    <div class="title">{{title}} - {{nbLefts}} restant</div>
+    <div class="description">
+      {{description}}
+    </div>
+
+    <div class="actions">
+      <i class="pencil alternate icon clickable" (click)="edit.emit()"></i>
+      <i class="trash alternate icon clickable" (click)="delete.emit()"></i>
+    </div>
+  </div>
+</div>
+
+<div class="ui divider"></div>

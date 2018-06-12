@@ -1,0 +1,15 @@
+.my-tickets {
+
+}
+
+.title, .noTicket {
+    text-align: center;
+}
+
+.form-ticket {
+    text-align: center;
+}
+
+.form-ticket input, .form-ticket textarea, .form-ticket button[type='submit'] {
+    margin-top: 10px;
+}

@@ -1,0 +1,7 @@
+<ng-container *ngIf="!user.user.logged">
+    <app-login></app-login>
+</ng-container>
+
+<ng-container *ngIf="user.user.logged">
+    <app-list-tickets></app-list-tickets>
+</ng-container>

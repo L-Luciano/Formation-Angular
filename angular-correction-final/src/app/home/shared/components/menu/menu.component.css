@@ -1,0 +1,14 @@
+nav {
+    text-align: center;
+}
+
+nav .link {
+    font-size: 12px;
+    color: brown;
+}
+
+nav .link:hover {
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+}

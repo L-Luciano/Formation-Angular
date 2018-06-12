@@ -1,0 +1,8 @@
+<nav>
+    <ng-container *ngFor="let link of links">
+        <span class="separator">-</span>
+        <a class="link" (click)="clickLink(link.link)">{{link.display}}</a>
+    </ng-container>
+
+    <span class="separator">-</span>
+</nav>

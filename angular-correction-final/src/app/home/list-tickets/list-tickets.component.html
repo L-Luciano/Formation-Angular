@@ -1,0 +1,40 @@
+<div class="my-tickets">
+    <h2 class="title">Tous les tickets dispos</h2>
+
+    <div *ngIf="tickets; then okTickets else noTickets"></div>
+
+    <ng-template #okTickets>
+        <div *ngFor="let ticket of tickets; let i = index" class="ticket">
+            <div class="actions" *ngIf="!loadingRequest">
+                <span class="remove" (click)="removeTicket(i)">X</span>
+                <span class="edit" (click)="editTicket(i)">| Edit |</span>
+            </div>
+
+            <div class="left">
+                <img [src]="ticket.urlImage"/>
+            </div>
+
+            <div class="right">
+                <div class="name">{{ticket.name}}</div>
+
+                <!-- SI ENCORE TICKETS -->
+                <div *ngIf="ticket.nbLefts; else noTicketLeft">
+                    <div>Il reste {{ticket.nbLefts}} ticket(s)</div>
+                    <div>Expire le {{ticket.expiration | date:'dd/MM/yyyy'}}</div>
+                    <div class="description">{{ticket.description}}</div>
+                </div>
+
+                <!-- SI PLUS DE TICKETS -->
+                <ng-template #noTicketLeft>
+                    RUPTURE DE STOCK
+                </ng-template>
+            </div>
+
+            <div class="clear"></div>
+        </div>
+    </ng-template>
+
+    <ng-template #noTickets>
+        Aucune ticket disponible
+    </ng-template>
+</div>

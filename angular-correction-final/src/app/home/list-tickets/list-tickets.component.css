@@ -1,0 +1,72 @@
+.my-tickets {
+
+}
+
+.title, .noTicket {
+    text-align: center;
+}
+
+.ticket {
+    position: relative;
+    border: 1px dashed black;
+    width: 80%;
+    margin: 10px auto;
+    padding: 10px;
+}
+
+.ticket .left {
+    float: left;
+    width: 50%;
+}
+
+.ticket .left img {
+    width: 90%;
+    margin: auto;
+}
+
+.ticket .clear {
+    clear: both;
+}
+
+.ticket .right {
+    width: 50%;
+    float: right;
+}
+
+.ticket .right .name {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+.ticket .right .description {
+    color: #2B2B2B;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.ticket .actions {
+    position: absolute;
+    top: 0;
+    right: 5px;
+}
+
+.ticket .actions .remove {
+    color: darkred;
+}
+
+.ticket .actions .remove:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.ticket .actions .edit {
+    color: darkgreen;
+}
+
+.ticket .actions .edit:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
